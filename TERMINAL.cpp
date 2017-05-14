@@ -1,15 +1,31 @@
-﻿#include<iostream>
+#include<iostream>
 #include<iomanip>
 #include<string>
 #include<cstdlib>
 #include <windows.h> 
 
 using namespace std;
-
+int time2 = 20;
+int strlen(char *str)
+{
+	int len = 0;
+	while (str[len] != '\0')
+		len++;
+	return len;
+}
+void slouwrite(char *str)
+{
+	for (int i = 0; i < strlen(str); i++)
+	{
+		cout << str[i];
+		Sleep(time2);
+	}
+	cout << endl;
+}
 int main() {
 	system("color 0A");
 	setlocale(LC_ALL, "RUSSIAN");
-	int time = 200;
+	int time = 100;
 	cout << "  ##      ##  ########          ##            #########" << endl; Sleep(time);
 	cout << "  ##      ##  ##      ##      ##  ##          ##      ##" << endl; Sleep(time);
 	cout << "    ##  ##    ##      ##      ##  ##          ##      ##" << endl; Sleep(time);
@@ -33,26 +49,25 @@ int main() {
 	int num_attempts = 4;
 	string your_attempt = " ";
 	int y;
-
-	cout << "УРАЛ WEB INDUSTRIES (™) TERMLINK PROTOCOL" << endl;
+	slouwrite("УРАЛ WEB INDUSTRIES (™) TERMLINK PROTOCOL");
 	Sleep(time);
-	cout << "ВВЕДИТЕ ПАРОЛЬ" << endl;
+	slouwrite("ВВЕДИТЕ ПАРОЛЬ");
 
 
 	cout << endl;
-	cout << " Осталось попыток: ";
+	slouwrite(" Осталось попыток: ");
 	for (n = 0; n<num_attempts; n++) {
-		cout << "*";
+		cout<<"*";
 	} cout << endl;
 	cout << endl;
-	cout << "0xF4F0 VIRAL 0xF5BC MINES" << endl; Sleep(time);
-	cout << "0cF4FC DARED 0xF5C8 LIKES" << endl; Sleep(time);
-	cout << "0xF508 WIRES 0xF5D4 PARTS" << endl; Sleep(time);
-	cout << "0xF514 LINES 0xF5E0 HAREM" << endl; Sleep(time);
-	cout << "0xF520 LIVES 0xF5EC LINED" << endl; Sleep(time);
-	cout << "0xF52C SORTS 0xF5F8 WARNS" << endl; Sleep(time);
-	cout << "0xF538 AGREE 0xF604 THREW" << endl; Sleep(time);
-	cout << "0xF544 FARMS 0xF610 SIDES" << endl; Sleep(time);
+	slouwrite("0xF4F0 VIRAL 0xF5BC MINES" );
+	slouwrite("0cF4FC DARED 0xF5C8 LIKES" );
+	slouwrite("0xF508 WIRES 0xF5D4 PARTS" );
+	slouwrite("0xF514 LINES 0xF5E0 HAREM" );
+	slouwrite("0xF520 LIVES 0xF5EC LINED" );
+	slouwrite("0xF52C SORTS 0xF5F8 WARNS" );
+	slouwrite("0xF538 AGREE 0xF604 THREW" );
+	slouwrite("0xF544 FARMS 0xF610 SIDES" );
 
 	do {
 		if (num_attempts > 0) {
@@ -60,28 +75,30 @@ int main() {
 			cin >> your_attempt;
 			if (your_attempt != "AGREE") {
 				if (your_attempt == "VIRAL" || your_attempt == "LINES" || your_attempt == "LIVES" || your_attempt == "SORTS" || your_attempt == "FARMS" || your_attempt == "MINES" || your_attempt == "LIKES" || your_attempt == "PARTS" || your_attempt == "LINED" || your_attempt == "WARNS" || your_attempt == "SIDES") {
-					cout << "Неверно! " << "1/5 Верных символов" << endl;
+					slouwrite("Неверно!  ");slouwrite( "1/5 Верных символов");
 				}
-				else { cout << "Неверно! " << "2/5 Верных символов" << endl; }
+				else { slouwrite("Неверно!  ");slouwrite( "2/5 Верных символов"); 
+				num_attempts = num_attempts - 1;
+				slouwrite(" Осталось попыток: ");
+				for (n = 0; n<num_attempts; n++) {
+					cout<<"*";
+				} cout << endl;
+				}
 			}
 		}
-		num_attempts = num_attempts - 1;
-		cout << " Осталось попыток: ";
-		for (n = 0; n<num_attempts; n++) {
-			cout << "*";
-		} cout << endl;
+		
 	} while (your_attempt != "AGREE" && num_attempts != 0);
 
 	if (your_attempt == "AGREE") {
-		cout << "     Терминал взломан!"; 
+		slouwrite("     Терминал взломан!"); 
 		Sleep(3000);
 		system("cls");
-		cout<<"     Смотритель терминала\n     Морозов Олег Иванович \n     Участник разработки РК <ТОПОЛЬ> и <ВОЕВОДА>\n     Инженер-программист\n     Контактные данные: +7(904)804-57-71" << endl; Sleep(time);
-		cout << "     СТАТУС: НА СВЯЗИ(ТОЛЬКО СООБЩЕНИЯ)" << endl;
+		slouwrite("     Смотритель терминала"); slouwrite("     Морозов Олег Иванович "); slouwrite("     Участник разработки РК <ТОПОЛЬ> и <ВОЕВОДА>"); slouwrite("     Инженер-программист"); slouwrite("     Контактные данные: +7(904)804-57-71"); Sleep(time);
+		slouwrite("     СТАТУС: НА СВЯЗИ(ТОЛЬКО СООБЩЕНИЯ)");
 		system("pause");
 	}
 	else {
-		cout << "Вы временно заблокированы! Обратитесь к администратору!" << endl;
+		slouwrite("Вы временно заблокированы! Обратитесь к администратору!");
 	}
 
 	return 0;
