@@ -1,9 +1,9 @@
-#include<iostream>
+﻿#include<iostream>
 #include<iomanip>
 #include<string>
 #include<cstdlib>
 #include <windows.h> 
-
+//povered by morozov
 using namespace std;
 int time2 = 20;
 int strlen(char *str)
